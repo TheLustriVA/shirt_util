@@ -1,5 +1,7 @@
 # SHIRT Tests
 
+![SHIRT tests banner](https://i.imgur.com/r8dpEbf.png)
+
 This directory contains tests for the SHIRT command-line tool. The tests cover various functionalities of the tool, such as basic renaming, recursive renaming, inverting the match, and dry-run functionality.
 
 ## Running the tests
