@@ -1,5 +1,7 @@
 # SHIRT: SHIRT Handles Intense Renaming Tasks
 
+![shirt readme banner](https://i.imgur.com/nSp2wcK.png)
+
 SHIRT is a command-line tool for renaming files by replacing strings in their filenames. It provides a convenient and efficient way to handle bulk renaming tasks, with support for file patterns, recursion, and optional backup of the original files.
 
 ## Features
