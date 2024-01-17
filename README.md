@@ -4,8 +4,10 @@
 
 SHIRT is a command-line tool for renaming files by replacing strings in their filenames. It provides a convenient and efficient way to handle bulk renaming tasks, with support for file patterns, recursion, and optional backup of the original files.
 
-## Features
+## Features (updated 2024-01-18)
 
+- (v0.2.0rc1) Remove punctuation from filenames
+- (v0.2.0rc1) Replace spaces with underscores
 - Replace one or multiple strings in filenames
 - Match files by file pattern
 - Invert file pattern matching
@@ -45,6 +47,8 @@ shirt [OPTIONS] STRINGS... REPLACEMENT
 - `-i, --invert-match`: Act on files that do not match the given pattern.
 - `-d, --dry-run`: Show the changes that would be made, without renaming any files.
 - `-b, --backup`: Backup files before renaming.
+- `-g, --remove-punctuation`: Replaces need for pair of strings. Remove punctuation from filenames.
+- `-s, --space-to-underscore`: Only works with --remove-punctuation. Replace spaces with underscores.
 
 ### Examples
 
@@ -62,6 +66,15 @@ shirt "old" "new"
 
 shirt "old1" "old2" "new" -p "*.txt"
 
+```
+
+- Remove punctuation and replace spaces with underscores.
+
+```bash
+shirt --remove-punctuation --space-to-underscore
+
+# Removes the following characters ?.'";:,<>[]{}\|+'=-)(*&^%$\`#@!~+ _
+# The flag --space-to-underscore requires --remove-punctuation
 ```
 
 - Replace "old" with "new" in filenames that do not match the pattern `*123*`:
@@ -101,6 +114,7 @@ shirt "old" "new" -b
 - [x] One-click installation script.
 - [x] Dry-run mode to preview the changes without actually renaming the files.
 - [ ] Auto-detection and handling of character encoding in filenames (e.g., UTF-8, UTF-16, ISO-8859-1) to ensure proper renaming across different systems and platforms.
+- [x] Remove punctuation with one flag
 - [ ] Logging support, including a log file with detailed information about the renaming process and any encountered issues.
 - [ ] Undo functionality to revert the last renaming operation.
 - [ ] Case sensitivity option for matching file patterns and replacing strings.
